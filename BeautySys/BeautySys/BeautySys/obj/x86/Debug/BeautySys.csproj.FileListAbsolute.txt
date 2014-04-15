@@ -1,0 +1,99 @@
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Form1.resources
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Properties.Resources.resources
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csproj.GenerateResource.Cache
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\bin\Debug\BeautySys.exe
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\bin\Debug\BeautySys.pdb
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.exe
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.pdb
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPrincipal.resources
+c:\users\caio\documents\visual studio 2010\Projects\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCadUser.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.exe
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.pdb
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\bin\Debug\BeautySys.exe
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\bin\Debug\BeautySys.pdb
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCadUser.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Form1.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPrincipal.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Properties.Resources.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoProduto.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoServico.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.exe
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.pdb
+C:\Users\Caio\Desktop\BeautySys\BeautySys\bin\Debug\BeautySys.exe
+C:\Users\Caio\Desktop\BeautySys\BeautySys\bin\Debug\BeautySys.pdb
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csprojResolveAssemblyReference.cache
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCadUser.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Form1.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPrincipal.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoProduto.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoServico.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Properties.Resources.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csproj.GenerateResource.Cache
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.exe
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.pdb
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\bin\Debug\BeautySys.exe
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\bin\Debug\BeautySys.pdb
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCadUser.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Form1.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPrincipal.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoProduto.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoServico.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Properties.Resources.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csproj.GenerateResource.Cache
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmProduto.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmServico.resources
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csprojResolveAssemblyReference.cache
+C:\Users\Caio\Documents\GitHub\Projeto_LES\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmMedida.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\Telas_do_programa\Caio\BeautySys\BeautySys\obj\x86\Debug\BeautySys.exe
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\Telas_do_programa\Caio\BeautySys\BeautySys\obj\x86\Debug\BeautySys.pdb
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmProduto.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmServico.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Abertura.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCidade.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.frmCliente.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmEstado.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmProfissional.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Fechamento.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Entrada.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Saida.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmFormaPagamento.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCheques.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCReceber.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmMedida.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmFluxoCaixa.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmComanda.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPesquisaCliente.resources
+D:\FATEC\5º Semestre - Noturno\Laboratório de Engenharia de Software\SISTEMA_SALAO\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPesquisaProdServ.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.exe
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.pdb
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\bin\Debug\BeautySys.exe
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\bin\Debug\BeautySys.pdb
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csprojResolveAssemblyReference.cache
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Saida.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Entrada.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCadUser.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Abertura.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCaixa_Fechamento.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCheques.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCidade.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmCliente.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmComanda.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmCReceber.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmEstado.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmFluxoCaixa.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmFormaPagamento.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Form1.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmMedida.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPesquisaCliente.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPesquisaProdServ.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmPrincipal.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Forms.FrmProfissional.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoProduto.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmTipoServico.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmProduto.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.FrmServico.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.Properties.Resources.resources
+C:\Users\Caio\Desktop\BeautySys\BeautySys\BeautySys\obj\x86\Debug\BeautySys.csproj.GenerateResource.Cache
