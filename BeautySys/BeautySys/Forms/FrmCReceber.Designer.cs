@@ -51,6 +51,16 @@
             this.mtxbPagamento = new System.Windows.Forms.MaskedTextBox();
             this.txbCliente = new System.Windows.Forms.TextBox();
             this.dgvCReceber = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comanda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPagto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duplicata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbPesquisa = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.mtxbVencFin = new System.Windows.Forms.MaskedTextBox();
@@ -69,16 +79,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cboFormaPagto = new System.Windows.Forms.ComboBox();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comanda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaPagto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duplicata = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCReceber)).BeginInit();
             this.gpbPesquisa.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnFechar
             // 
@@ -314,6 +315,67 @@
             this.dgvCReceber.Size = new System.Drawing.Size(628, 172);
             this.dgvCReceber.TabIndex = 99;
             // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // cliente
+            // 
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // vencimento
+            // 
+            this.vencimento.HeaderText = "Vencimento";
+            this.vencimento.Name = "vencimento";
+            this.vencimento.ReadOnly = true;
+            // 
+            // emissao
+            // 
+            this.emissao.HeaderText = "Emissão";
+            this.emissao.Name = "emissao";
+            this.emissao.ReadOnly = true;
+            // 
+            // pagamento
+            // 
+            this.pagamento.HeaderText = "Pagamento";
+            this.pagamento.Name = "pagamento";
+            this.pagamento.ReadOnly = true;
+            // 
+            // comanda
+            // 
+            this.comanda.HeaderText = "Comanda";
+            this.comanda.Name = "comanda";
+            this.comanda.ReadOnly = true;
+            // 
+            // formaPagto
+            // 
+            this.formaPagto.HeaderText = "Forma de Pagamento";
+            this.formaPagto.Name = "formaPagto";
+            this.formaPagto.ReadOnly = true;
+            this.formaPagto.Width = 150;
+            // 
+            // duplicata
+            // 
+            this.duplicata.HeaderText = "Duplicata";
+            this.duplicata.Name = "duplicata";
+            this.duplicata.ReadOnly = true;
+            // 
+            // serie
+            // 
+            this.serie.HeaderText = "Serie";
+            this.serie.Name = "serie";
+            this.serie.ReadOnly = true;
+            // 
             // gpbPesquisa
             // 
             this.gpbPesquisa.Controls.Add(this.label7);
@@ -493,67 +555,6 @@
             this.cboFormaPagto.Name = "cboFormaPagto";
             this.cboFormaPagto.Size = new System.Drawing.Size(162, 21);
             this.cboFormaPagto.TabIndex = 104;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // cliente
-            // 
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            this.cliente.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // vencimento
-            // 
-            this.vencimento.HeaderText = "Vencimento";
-            this.vencimento.Name = "vencimento";
-            this.vencimento.ReadOnly = true;
-            // 
-            // emissao
-            // 
-            this.emissao.HeaderText = "Emissão";
-            this.emissao.Name = "emissao";
-            this.emissao.ReadOnly = true;
-            // 
-            // pagamento
-            // 
-            this.pagamento.HeaderText = "Pagamento";
-            this.pagamento.Name = "pagamento";
-            this.pagamento.ReadOnly = true;
-            // 
-            // comanda
-            // 
-            this.comanda.HeaderText = "Comanda";
-            this.comanda.Name = "comanda";
-            this.comanda.ReadOnly = true;
-            // 
-            // formaPagto
-            // 
-            this.formaPagto.HeaderText = "Forma de Pagamento";
-            this.formaPagto.Name = "formaPagto";
-            this.formaPagto.ReadOnly = true;
-            this.formaPagto.Width = 150;
-            // 
-            // duplicata
-            // 
-            this.duplicata.HeaderText = "Duplicata";
-            this.duplicata.Name = "duplicata";
-            this.duplicata.ReadOnly = true;
-            // 
-            // serie
-            // 
-            this.serie.HeaderText = "Serie";
-            this.serie.Name = "serie";
-            this.serie.ReadOnly = true;
             // 
             // FrmCReceber
             // 

@@ -63,7 +63,12 @@ namespace BeautySys.Forms
 
         private void limparCampos()
         {
+            txtCodigo.Text = "";
+        }
 
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
         }
 
 
