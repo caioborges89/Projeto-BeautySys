@@ -19,8 +19,15 @@ namespace BeautySys.DataAccess
         {
             try
             {           
-                string sql = "INSERT INTO CRECEBER(PK_CODIGO,FK_COMANDA,";
-                string sql2 = "VALUES(@PK_CODIGO,@FK_COMANDA,";
+                string sql = "INSERT INTO CRECEBER(PK_CODIGO,";
+                string sql2 = "VALUES(@PK_CODIGO,";
+
+                //COMANDA
+                if (cReceberVO.fk_comanda > 0)
+                {
+                    sql = sql + "FK_COMANDA,";
+                    sql2 = sql2 + "@FK_COMANDA,";
+                }
 
                 //NOTA_FISCAL
                 if (cReceberVO.nota_fiscal > 0)
@@ -53,7 +60,11 @@ namespace BeautySys.DataAccess
 
                 SqlCommand cmd = SqlHelper.getCommand(sql);
                 cmd.Parameters.Add("@PK_CODIGO", SqlDbType.Int).Value = _funcoes.novoCodigo("CRECEBER", "PK_CODIGO");
-                cmd.Parameters.Add("@FK_COMANDA", SqlDbType.Int).Value = cReceberVO.fk_comanda;
+                //COMANDA
+                if (cReceberVO.fk_comanda > 0)
+                {
+                    cmd.Parameters.Add("@FK_COMANDA", SqlDbType.Int).Value = cReceberVO.fk_comanda;
+                }
                 //NOTA_FICAL
                 if (cReceberVO.nota_fiscal > 0)
                 {
@@ -102,7 +113,8 @@ namespace BeautySys.DataAccess
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
@@ -110,7 +122,7 @@ namespace BeautySys.DataAccess
         {
             try
             {
-                string sql = "UPDATE CRECEBER SET DESCRICAO = @DESCRICAO, "; 
+                string sql = "UPDATE CRECEBER SET "; 
 
                 //FK_COMANDA
                 if (cReceberVO.fk_comanda > 0)
@@ -130,7 +142,7 @@ namespace BeautySys.DataAccess
                     sql = sql + "SERIE = @SERIE, ";
                 }
 
-                sql = sql + "FK_CLIENTE = @FK_CLIENTE, DT_EMISSAO = @DT_EMISSAO, DT_VENCIMENTO = @DTVENCIMENTO, VALOR = @VALOR, ";
+                sql = sql + "FK_CLIENTE = @FK_CLIENTE, DT_EMISSAO = @DT_EMISSAO, DT_VENCIMENTO = @DT_VENCIMENTO, VALOR = @VALOR, ";
 
                 //DT_PAGAMENTO
                 if (!cReceberVO.dt_pagamento.ToString("dd/MM/yyyy").Equals("01/01/0001"))
@@ -140,7 +152,7 @@ namespace BeautySys.DataAccess
 
                 sql = sql + "FK_FORMA_PAGTO = @FK_FORMA_PAGTO ";
 
-                sql = sql = "WHERE PK_CODIGO = @PK_CODIGO";
+                sql = sql + "WHERE PK_CODIGO = @PK_CODIGO";
 
                 SqlCommand cmd = SqlHelper.getCommand(sql);
 
@@ -178,7 +190,8 @@ namespace BeautySys.DataAccess
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
@@ -186,24 +199,38 @@ namespace BeautySys.DataAccess
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(@"SELECT C.PK_CODIGO, C.FK_COMANDA, C.NOTA_FISCAL, C.SERIE, C.FK_CLIENTE, CLI.NOME AS CLIENTE, C.DT_EMISSAO, C.DT_VENCIMENTO, C.VALOR, C.DT_PAGAMENTO, C.FK_FORMA_PAGTO, F.DESCRICAO AS FORMA_PAGTO FROM CRECEBER C");
+            sb.Append(@"SET LANGUAGE PORTUGUESE");
+            sb.Append(" SELECT C.PK_CODIGO, C.FK_COMANDA, C.NOTA_FISCAL, C.SERIE, C.FK_CLIENTE, CLI.NOME AS CLIENTE, C.DT_EMISSAO, C.DT_VENCIMENTO, C.VALOR, C.DT_PAGAMENTO, C.FK_FORMA_PAGTO, F.DESCRICAO AS FORMA_PAGTO FROM CRECEBER C");
             sb.Append(" INNER JOIN CLIENTE CLI ON C.FK_CLIENTE = CLI.PK_CODIGO");
             sb.Append(" INNER JOIN FORMA_PAGTO F ON C.FK_FORMA_PAGTO = F.PK_CODIGO");
             sb.Append(" WHERE NOT C.PK_CODIGO IS NULL");
 
-            if (!cReceberVO.dt_emissao.ToString("dd/MM/yyyy").Equals("01/01/0001"))
+            if (!cReceberVO.dt_emissao_ini.ToString("dd/MM/yyyy").Equals("01/01/0001") && !cReceberVO.dt_emissao_fim.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             {
-                sb.Append(" AND C.DT_EMISSAO BETWEEN '" + cReceberVO.dt_emissao.ToString("dd/MM/yyyy") + " 00:00:01' AND '" + cReceberVO.dt_emissao.ToString("dd/MM/yyyy") + " 23:59:59'");
+                sb.Append(" AND C.DT_EMISSAO BETWEEN '" + cReceberVO.dt_emissao_ini.ToString("dd/MM/yyyy") + " 00:00:01' AND '" + cReceberVO.dt_emissao_fim.ToString("dd/MM/yyyy") + " 23:59:59'");
             }
 
-            if (!cReceberVO.dt_vencimento.ToString("dd/MM/yyyy").Equals("01/01/0001"))
+            if (!cReceberVO.dt_vencimento_ini.ToString("dd/MM/yyyy").Equals("01/01/0001") && !cReceberVO.dt_vencimento_fim.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             {
-                sb.Append(" AND C.DT_VENCIMENTO BETWEEN '" + cReceberVO.dt_vencimento.ToString("dd/MM/yyyy") + " 00:00:01' AND '" + cReceberVO.dt_vencimento.ToString("dd/MM/yyyy") + " 23:59:59'");
+                sb.Append(" AND C.DT_VENCIMENTO BETWEEN '" + cReceberVO.dt_vencimento_ini.ToString("dd/MM/yyyy") + " 00:00:01' AND '" + cReceberVO.dt_vencimento_fim.ToString("dd/MM/yyyy") + " 23:59:59'");
             }
 
             if (!cReceberVO.dt_pagamento.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             {
                 sb.Append(" AND C.DT_PAGAMENTO BETWEEN '" + cReceberVO.dt_pagamento.ToString("dd/MM/yyyy") + " 00:00:01' AND '" + cReceberVO.dt_pagamento.ToString("dd/MM/yyyy") + " 23:59:59'");
+            }
+
+            if (!String.IsNullOrEmpty(cReceberVO.criterio))
+            {
+                if (cReceberVO.criterio.Equals("Em aberto"))
+                {
+                    sb.Append(" AND C.DT_PAGAMENTO IS NULL");
+                }
+
+                if (cReceberVO.criterio.Equals("Baixada"))
+                {
+                    sb.Append(" AND NOT C.DT_PAGAMENTO IS NULL");
+                }
             }
                 
             sb.Append(" ORDER BY C.PK_CODIGO");
@@ -258,6 +285,28 @@ namespace BeautySys.DataAccess
 
             if (reader["FORMA_PAGTO"] != DBNull.Value)
                 cReceberVO.forma_pagto = Convert.ToString(reader["FORMA_PAGTO"]);
+        }
+
+        public bool baixarCReceber(CReceberVO cReceberVO)
+        {
+            try
+            {
+                string sql = "UPDATE CRECEBER SET DT_PAGAMENTO = @DT_PAGAMENTO WHERE PK_CODIGO = @PK_CODIGO";
+
+                SqlCommand cmd = SqlHelper.getCommand(sql);
+
+                cmd.Parameters.Add("@PK_CODIGO", SqlDbType.Int).Value = cReceberVO.pk_codigo;
+                cmd.Parameters.Add("@DT_PAGAMENTO", SqlDbType.SmallDateTime).Value = cReceberVO.dt_pagamento.ToString("dd/MM/yyyy HH:mm:ss");
+
+                SqlHelper.executeNonQuery(cmd);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
     }
 }

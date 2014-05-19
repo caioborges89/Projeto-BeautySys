@@ -17,7 +17,8 @@ namespace BeautySys.DataAccess
         {
             try
             {
-                string sql = @"INSERT INTO COMANDA(PK_CODIGO,DATA,FK_CLIENTE,FK_PROFISSIONAL,OBS,VALOR,FK_FORMA_PAGTO,DESC_TOTAL) 
+                string sql = @"SET LANGUAGE PORTUGUESE
+                                INSERT INTO COMANDA(PK_CODIGO,DATA,FK_CLIENTE,FK_PROFISSIONAL,OBS,VALOR,FK_FORMA_PAGTO,DESC_TOTAL) 
                                 VALUES(@PK_CODIGO,@DATA,@FK_CLIENTE,@FK_PROFISSIONAL,@OBS,@VALOR,@FK_FORMA_PAGTO,@DESC_TOTAL)";
                 SqlCommand cmd = SqlHelper.getCommand(sql);
                 cmd.Parameters.Add("@PK_CODIGO", SqlDbType.Int).Value = comandaVO.pk_codigo;

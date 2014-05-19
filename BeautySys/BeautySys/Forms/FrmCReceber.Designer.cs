@@ -45,7 +45,7 @@
             this.txbDuplicata = new System.Windows.Forms.TextBox();
             this.lblduplicata = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txbCodigo = new System.Windows.Forms.TextBox();
             this.mtxbEmissa = new System.Windows.Forms.MaskedTextBox();
             this.mtxbVencimento = new System.Windows.Forms.MaskedTextBox();
             this.mtxbPagamento = new System.Windows.Forms.MaskedTextBox();
@@ -61,6 +61,7 @@
             this.formaPagto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duplicata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbPesquisa = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.mtxbVencFin = new System.Windows.Forms.MaskedTextBox();
@@ -79,6 +80,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cboFormaPagto = new System.Windows.Forms.ComboBox();
+            this.btnBaixar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCReceber)).BeginInit();
             this.gpbPesquisa.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +122,7 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -132,6 +135,7 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnGravar
             // 
@@ -144,6 +148,7 @@
             this.btnGravar.Text = "Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // btnLocalizar
             // 
@@ -156,6 +161,7 @@
             this.btnLocalizar.Text = "Localizar";
             this.btnLocalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // lblpagto
             // 
@@ -250,13 +256,13 @@
             this.label3.TabIndex = 92;
             this.label3.Text = "Código:";
             // 
-            // txtCodigo
+            // txbCodigo
             // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(73, 13);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 94;
+            this.txbCodigo.Location = new System.Drawing.Point(73, 13);
+            this.txbCodigo.Name = "txbCodigo";
+            this.txbCodigo.ReadOnly = true;
+            this.txbCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txbCodigo.TabIndex = 94;
             // 
             // mtxbEmissa
             // 
@@ -292,6 +298,8 @@
             this.txbCliente.Name = "txbCliente";
             this.txbCliente.Size = new System.Drawing.Size(253, 20);
             this.txbCliente.TabIndex = 98;
+            this.txbCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbCliente_KeyDown);
+            this.txbCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCliente_KeyPress);
             // 
             // dgvCReceber
             // 
@@ -308,12 +316,14 @@
             this.comanda,
             this.formaPagto,
             this.duplicata,
-            this.serie});
+            this.serie,
+            this.codigo_cliente});
             this.dgvCReceber.Location = new System.Drawing.Point(12, 91);
             this.dgvCReceber.Name = "dgvCReceber";
             this.dgvCReceber.ReadOnly = true;
             this.dgvCReceber.Size = new System.Drawing.Size(628, 172);
             this.dgvCReceber.TabIndex = 99;
+            this.dgvCReceber.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCReceber_CellDoubleClick);
             // 
             // codigo
             // 
@@ -375,6 +385,13 @@
             this.serie.HeaderText = "Serie";
             this.serie.Name = "serie";
             this.serie.ReadOnly = true;
+            // 
+            // codigo_cliente
+            // 
+            this.codigo_cliente.HeaderText = "Cod_Cli";
+            this.codigo_cliente.Name = "codigo_cliente";
+            this.codigo_cliente.ReadOnly = true;
+            this.codigo_cliente.Visible = false;
             // 
             // gpbPesquisa
             // 
@@ -492,6 +509,7 @@
             // rbTodas
             // 
             this.rbTodas.AutoSize = true;
+            this.rbTodas.Checked = true;
             this.rbTodas.Location = new System.Drawing.Point(6, 63);
             this.rbTodas.Name = "rbTodas";
             this.rbTodas.Size = new System.Drawing.Size(55, 17);
@@ -507,7 +525,6 @@
             this.rbBaixada.Name = "rbBaixada";
             this.rbBaixada.Size = new System.Drawing.Size(63, 17);
             this.rbBaixada.TabIndex = 5;
-            this.rbBaixada.TabStop = true;
             this.rbBaixada.Text = "Baixada";
             this.rbBaixada.UseVisualStyleBackColor = true;
             // 
@@ -518,7 +535,6 @@
             this.rbAberto.Name = "rbAberto";
             this.rbAberto.Size = new System.Drawing.Size(73, 17);
             this.rbAberto.TabIndex = 4;
-            this.rbAberto.TabStop = true;
             this.rbAberto.Text = "Em aberto";
             this.rbAberto.UseVisualStyleBackColor = true;
             // 
@@ -556,11 +572,25 @@
             this.cboFormaPagto.Size = new System.Drawing.Size(162, 21);
             this.cboFormaPagto.TabIndex = 104;
             // 
+            // btnBaixar
+            // 
+            this.btnBaixar.Image = global::BeautySys.Properties.Resources.entrada_caixa;
+            this.btnBaixar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaixar.Location = new System.Drawing.Point(255, 269);
+            this.btnBaixar.Name = "btnBaixar";
+            this.btnBaixar.Size = new System.Drawing.Size(127, 39);
+            this.btnBaixar.TabIndex = 105;
+            this.btnBaixar.Text = "Baixar Conta";
+            this.btnBaixar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBaixar.UseVisualStyleBackColor = true;
+            this.btnBaixar.Click += new System.EventHandler(this.btnBaixar_Click);
+            // 
             // FrmCReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 321);
+            this.Controls.Add(this.btnBaixar);
             this.Controls.Add(this.cboFormaPagto);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txbComanda);
@@ -571,7 +601,7 @@
             this.Controls.Add(this.mtxbPagamento);
             this.Controls.Add(this.mtxbVencimento);
             this.Controls.Add(this.mtxbEmissa);
-            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txbCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblpagto);
             this.Controls.Add(this.txbSerie);
@@ -619,7 +649,7 @@
         private System.Windows.Forms.TextBox txbDuplicata;
         private System.Windows.Forms.Label lblduplicata;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txbCodigo;
         private System.Windows.Forms.MaskedTextBox mtxbEmissa;
         private System.Windows.Forms.MaskedTextBox mtxbVencimento;
         private System.Windows.Forms.MaskedTextBox mtxbPagamento;
@@ -653,5 +683,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn formaPagto;
         private System.Windows.Forms.DataGridViewTextBoxColumn duplicata;
         private System.Windows.Forms.DataGridViewTextBoxColumn serie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_cliente;
+        private System.Windows.Forms.Button btnBaixar;
     }
 }

@@ -30,5 +30,10 @@ namespace BeautySys.Business
         {
             return _cReceberDA.buscarCReceber(cReceberVO);
         }
+
+        public bool baixarCReceber(CReceberVO cReceberVO)
+        {
+            return _cReceberDA.baixarCReceber(cReceberVO);
+        }
     }
 }

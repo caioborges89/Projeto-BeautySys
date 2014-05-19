@@ -30,5 +30,15 @@ namespace BeautySys.Classes
         public string cliente { get; set; }
 
         public string forma_pagto { get; set; }
+
+        public string criterio { get; set; }
+
+        public DateTime dt_emissao_ini { get; set; }
+
+        public DateTime dt_emissao_fim { get; set; }
+
+        public DateTime dt_vencimento_ini { get; set; }
+
+        public DateTime dt_vencimento_fim { get; set; }
     }
 }

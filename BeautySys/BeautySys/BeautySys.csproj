@@ -57,6 +57,7 @@
     <Compile Include="Business\ComboBO.cs" />
     <Compile Include="Business\CReceberBO.cs" />
     <Compile Include="Business\EstadoBO.cs" />
+    <Compile Include="Business\FluxoCaixaBO.cs" />
     <Compile Include="Business\FormaPagtoBO.cs" />
     <Compile Include="Business\ItemComandaBO.cs" />
     <Compile Include="Business\LoginBO.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Classes\ComboVO.cs" />
     <Compile Include="Classes\CReceberVO.cs" />
     <Compile Include="Classes\EstadoVO.cs" />
+    <Compile Include="Classes\FluxoCaixaVO.cs" />
     <Compile Include="Classes\FormaPagtoVO.cs" />
     <Compile Include="Classes\ItemComandaVO.cs" />
     <Compile Include="Classes\LoginVO.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="DataAccess\ComandaDA.cs" />
     <Compile Include="DataAccess\CReceberDA.cs" />
     <Compile Include="DataAccess\EstadoDA.cs" />
+    <Compile Include="DataAccess\FluxoCaixaDA.cs" />
     <Compile Include="DataAccess\FormaPagtoDA.cs" />
     <Compile Include="DataAccess\ItemComandaDA.cs" />
     <Compile Include="DataAccess\LoginDA.cs" />
