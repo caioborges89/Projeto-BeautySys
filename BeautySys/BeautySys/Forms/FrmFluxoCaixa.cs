@@ -85,7 +85,9 @@ namespace BeautySys.Forms
             decimal saldo;
             lblSaldo.Text = "0.00";
 
-            saldo = abertura + entrada - saida + comanda + creceber;
+            //saldo = abertura + entrada - saida + comanda + creceber;
+            //não pode somar as comandas, pois seus valores ja estao em CReceber
+            saldo = abertura + entrada - saida + creceber;
 
             lblSaldo.Text = saldo.ToString("###,###,##0.00");
         }

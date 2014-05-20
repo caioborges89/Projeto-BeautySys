@@ -44,9 +44,18 @@ namespace BeautySys.Util
             {
                 //MessageBox.Show("Erro: " + ex.Message);
                 throw ex;
-            }       
-            
-            
+            }                   
+        }
+
+        public static string valorMonetario(string valor)
+        {
+            if (!String.IsNullOrEmpty(valor))
+            {
+                double texto = Convert.ToDouble(valor);
+                valor = texto.ToString("###,###,##0.00");
+            }
+
+            return valor;
         }
     }
 }
