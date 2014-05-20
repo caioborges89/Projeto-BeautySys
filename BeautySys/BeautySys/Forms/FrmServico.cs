@@ -60,11 +60,46 @@ namespace BeautySys
                 _servicoVO.pk_codigo = Convert.ToInt32(txtCodigo.Text);
             _servicoVO.descricao = txtNome.Text;
             _servicoVO.fk_tipo_servico = (cbTipoServico.SelectedItem as TipoServicoVO).pk_codigo;
-            _servicoVO.valor = Convert.ToDecimal(txtValor.Text);
-            _servicoVO.custo = Convert.ToDecimal(txtCusto.Text);
-            _servicoVO.desc_max = Convert.ToDecimal(txtDescMaximo.Text);
-            _servicoVO.duracao = Convert.ToInt32(txtDuracao.Text);
-            _servicoVO.comissao = Convert.ToDecimal(txtComissao.Text);
+            if (!String.IsNullOrEmpty(txtValor.Text))
+            {
+                _servicoVO.valor = Convert.ToDecimal(txtValor.Text);
+            }
+            else
+            {
+                _servicoVO.valor = 0;
+            }
+            if (!String.IsNullOrEmpty(txtCusto.Text))
+            {
+                _servicoVO.custo = Convert.ToDecimal(txtCusto.Text);
+            }
+            else
+            {
+                _servicoVO.custo = 0;
+            }
+            if (!String.IsNullOrEmpty(txtDescMaximo.Text))
+            {
+                _servicoVO.desc_max = Convert.ToDecimal(txtDescMaximo.Text);
+            }
+            else
+            {
+                _servicoVO.desc_max = 0;
+            }
+            if (!String.IsNullOrEmpty(txtDuracao.Text))
+            {
+                _servicoVO.duracao = Convert.ToInt32(txtDuracao.Text);
+            }
+            else
+            {
+                _servicoVO.duracao = 0;
+            }
+            if (!String.IsNullOrEmpty(txtComissao.Text))
+            {
+                _servicoVO.comissao = Convert.ToDecimal(txtComissao.Text);
+            }
+            else
+            {
+                _servicoVO.comissao = 0;
+            }
             _servicoVO.obs = txtObs.Text;
 
             return _servicoVO;
@@ -201,16 +236,6 @@ namespace BeautySys
             Servico_Load(null, null);
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            //habilitaComponentes(true);
-        }
-
-        private void btnLocalizar_Click(object sender, EventArgs e)
-        {
-            //habilitaComponentes(true);
-        }
-
         private void dgvServicos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             _servicoVO.pk_codigo = Convert.ToInt32(dgvServicos.Rows[dgvServicos.CurrentRow.Index].Cells[0].Value);
@@ -227,6 +252,26 @@ namespace BeautySys
                 txtComissao.Text = Convert.ToString(lista[0].comissao);
                 txtObs.Text = lista[0].obs;
             }
+        }
+
+        private void txtValor_Leave(object sender, EventArgs e)
+        {
+            txtValor.Text = Funcoes.valorMonetario(txtValor.Text);
+        }
+
+        private void txtCusto_Leave(object sender, EventArgs e)
+        {
+            txtCusto.Text = Funcoes.valorMonetario(txtCusto.Text);
+        }
+
+        private void txtDescMaximo_Leave(object sender, EventArgs e)
+        {
+            txtDescMaximo.Text = Funcoes.valorMonetario(txtDescMaximo.Text);
+        }
+
+        private void txtComissao_Leave(object sender, EventArgs e)
+        {
+            txtComissao.Text = Funcoes.valorMonetario(txtComissao.Text);
         }
     }
 }

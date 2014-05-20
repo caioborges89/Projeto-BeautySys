@@ -63,12 +63,54 @@ namespace BeautySys
             _produtoVO.descricao = txtNome.Text;
             _produtoVO.fk_tipo_produto = (cbTipoProduto.SelectedItem as TipoProdutoVO).pk_codigo;
             _produtoVO.fk_medida = (cbMedida.SelectedItem as MedidaVO).pk_medida;
-            _produtoVO.qtde_estoque = Convert.ToDecimal(txtEstoque.Text);
-            _produtoVO.estoque_minimo = Convert.ToInt32(txtEstoqueMinino.Text);
-            _produtoVO.valor = Convert.ToDecimal(txtValor.Text);
-            _produtoVO.custo = Convert.ToDecimal(txtCusto.Text);
-            _produtoVO.desc_max = Convert.ToDecimal(txtDescMaximo.Text);
-            _produtoVO.comissao = Convert.ToDecimal(txtComissao.Text);
+            if (!String.IsNullOrEmpty(txtEstoque.Text))
+            {
+                _produtoVO.qtde_estoque = Convert.ToDecimal(txtEstoque.Text);
+            }
+            else
+            {
+                _produtoVO.qtde_estoque = 0;
+            }
+            if (!String.IsNullOrEmpty(txtEstoqueMinino.Text))
+            {
+                _produtoVO.estoque_minimo = Convert.ToInt32(txtEstoqueMinino.Text);
+            }
+            else
+            {
+                _produtoVO.estoque_minimo = 0;
+            }
+            if (!String.IsNullOrEmpty(txtValor.Text))
+            {
+                _produtoVO.valor = Convert.ToDecimal(txtValor.Text);
+            }
+            else
+            {
+                _produtoVO.valor = 0;
+            }
+            if (!String.IsNullOrEmpty(txtCusto.Text))
+            {
+                _produtoVO.custo = Convert.ToDecimal(txtCusto.Text);
+            }
+            else
+            {
+                _produtoVO.custo = 0;
+            }
+            if (!String.IsNullOrEmpty(txtDescMaximo.Text))
+            {
+                _produtoVO.desc_max = Convert.ToDecimal(txtDescMaximo.Text);
+            }
+            else
+            {
+                _produtoVO.desc_max = 0;
+            }
+            if (!String.IsNullOrEmpty(txtComissao.Text))
+            {
+                _produtoVO.comissao = Convert.ToDecimal(txtComissao.Text);
+            }
+            else
+            {
+                _produtoVO.comissao = 0;
+            }
             _produtoVO.obs = txtObs.Text;
 
             return _produtoVO;
@@ -246,12 +288,32 @@ namespace BeautySys
                 cbMedida.SelectedValue = lista[0].fk_medida;
                 txtEstoque.Text = Convert.ToString(lista[0].qtde_estoque);
                 txtEstoqueMinino.Text = Convert.ToString(lista[0].estoque_minimo);
-                txtValor.Text = Convert.ToString(lista[0].valor);
-                txtCusto.Text = Convert.ToString(lista[0].custo);
-                txtDescMaximo.Text = Convert.ToString(lista[0].desc_max);
-                txtComissao.Text = Convert.ToString(lista[0].comissao);
+                txtValor.Text = lista[0].valor.ToString("###,###,##0.00");
+                txtCusto.Text = lista[0].custo.ToString("###,###,##0.00");
+                txtDescMaximo.Text = lista[0].desc_max.ToString("###,###,##0.00");
+                txtComissao.Text = lista[0].comissao.ToString("###,###,##0.00");
                 txtObs.Text = lista[0].obs;
             }
+        }
+
+        private void txtValor_Leave(object sender, EventArgs e)
+        {
+            txtValor.Text = Funcoes.valorMonetario(txtValor.Text);
+        }
+
+        private void txtCusto_Leave(object sender, EventArgs e)
+        {
+            txtCusto.Text = Funcoes.valorMonetario(txtCusto.Text);
+        }
+
+        private void txtDescMaximo_Leave(object sender, EventArgs e)
+        {
+            txtDescMaximo.Text = Funcoes.valorMonetario(txtDescMaximo.Text);
+        }
+
+        private void txtComissao_Leave(object sender, EventArgs e)
+        {
+            txtComissao.Text = Funcoes.valorMonetario(txtComissao.Text);
         }
              
     }

@@ -177,7 +177,7 @@
             this.cboUF.FormattingEnabled = true;
             this.cboUF.Location = new System.Drawing.Point(306, 71);
             this.cboUF.Name = "cboUF";
-            this.cboUF.Size = new System.Drawing.Size(36, 21);
+            this.cboUF.Size = new System.Drawing.Size(41, 21);
             this.cboUF.TabIndex = 21;
             this.cboUF.SelectedValueChanged += new System.EventHandler(this.cboUF_SelectedValueChanged);
             // 

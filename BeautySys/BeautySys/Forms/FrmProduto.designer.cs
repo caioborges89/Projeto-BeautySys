@@ -47,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblRg = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.btnLocalizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +70,7 @@
             this.cbTipoProduto.Location = new System.Drawing.Point(355, 76);
             this.cbTipoProduto.Name = "cbTipoProduto";
             this.cbTipoProduto.Size = new System.Drawing.Size(317, 21);
-            this.cbTipoProduto.TabIndex = 93;
+            this.cbTipoProduto.TabIndex = 2;
             // 
             // DgvCadProdutos
             // 
@@ -118,10 +117,10 @@
             // 
             this.btnFechar.Image = global::BeautySys.Properties.Resources.fechar;
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(499, 415);
+            this.btnFechar.Location = new System.Drawing.Point(466, 414);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(82, 39);
-            this.btnFechar.TabIndex = 91;
+            this.btnFechar.TabIndex = 12;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFechar.UseVisualStyleBackColor = true;
@@ -133,42 +132,46 @@
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(317, 184);
-            this.txtObs.TabIndex = 90;
+            this.txtObs.TabIndex = 10;
             // 
             // txtCusto
             // 
             this.txtCusto.Location = new System.Drawing.Point(552, 165);
             this.txtCusto.Name = "txtCusto";
             this.txtCusto.Size = new System.Drawing.Size(120, 20);
-            this.txtCusto.TabIndex = 86;
+            this.txtCusto.TabIndex = 7;
+            this.txtCusto.Leave += new System.EventHandler(this.txtCusto_Leave);
             // 
             // txtComissao
             // 
             this.txtComissao.Location = new System.Drawing.Point(552, 195);
             this.txtComissao.Name = "txtComissao";
             this.txtComissao.Size = new System.Drawing.Size(120, 20);
-            this.txtComissao.TabIndex = 87;
+            this.txtComissao.TabIndex = 9;
+            this.txtComissao.Leave += new System.EventHandler(this.txtComissao_Leave);
             // 
             // txtDescMaximo
             // 
             this.txtDescMaximo.Location = new System.Drawing.Point(355, 194);
             this.txtDescMaximo.Name = "txtDescMaximo";
             this.txtDescMaximo.Size = new System.Drawing.Size(120, 20);
-            this.txtDescMaximo.TabIndex = 89;
+            this.txtDescMaximo.TabIndex = 8;
+            this.txtDescMaximo.Leave += new System.EventHandler(this.txtDescMaximo_Leave);
             // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(355, 165);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(120, 20);
-            this.txtValor.TabIndex = 88;
+            this.txtValor.TabIndex = 6;
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(355, 46);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(317, 20);
-            this.txtNome.TabIndex = 84;
+            this.txtNome.TabIndex = 1;
             // 
             // lblObservacao
             // 
@@ -224,28 +227,14 @@
             this.lblCpf.TabIndex = 80;
             this.lblCpf.Text = "Valor:";
             // 
-            // btnLocalizar
-            // 
-            this.btnLocalizar.Enabled = false;
-            this.btnLocalizar.Image = global::BeautySys.Properties.Resources.pesquisar;
-            this.btnLocalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocalizar.Location = new System.Drawing.Point(326, 415);
-            this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(82, 39);
-            this.btnLocalizar.TabIndex = 76;
-            this.btnLocalizar.Text = "Localizar";
-            this.btnLocalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLocalizar.UseVisualStyleBackColor = true;
-            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
-            // 
             // btnExcluir
             // 
             this.btnExcluir.Image = global::BeautySys.Properties.Resources.excluir;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(251, 415);
+            this.btnExcluir.Location = new System.Drawing.Point(310, 414);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(69, 39);
-            this.btnExcluir.TabIndex = 75;
+            this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -255,10 +244,10 @@
             // 
             this.btnAlterar.Image = global::BeautySys.Properties.Resources.editar;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(172, 415);
+            this.btnAlterar.Location = new System.Drawing.Point(231, 414);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(73, 39);
-            this.btnAlterar.TabIndex = 74;
+            this.btnAlterar.TabIndex = 13;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -289,7 +278,7 @@
             this.cbMedida.Location = new System.Drawing.Point(355, 106);
             this.cbMedida.Name = "cbMedida";
             this.cbMedida.Size = new System.Drawing.Size(317, 21);
-            this.cbMedida.TabIndex = 93;
+            this.cbMedida.TabIndex = 3;
             // 
             // label6
             // 
@@ -314,14 +303,14 @@
             this.txtEstoque.Location = new System.Drawing.Point(355, 136);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(110, 20);
-            this.txtEstoque.TabIndex = 88;
+            this.txtEstoque.TabIndex = 4;
             // 
             // txtEstoqueMinino
             // 
             this.txtEstoqueMinino.Location = new System.Drawing.Point(562, 136);
             this.txtEstoqueMinino.Name = "txtEstoqueMinino";
             this.txtEstoqueMinino.Size = new System.Drawing.Size(110, 20);
-            this.txtEstoqueMinino.TabIndex = 86;
+            this.txtEstoqueMinino.TabIndex = 5;
             // 
             // txtCodigo
             // 
@@ -345,34 +334,33 @@
             // 
             this.btnGravar.Image = global::BeautySys.Properties.Resources.salvar;
             this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGravar.Location = new System.Drawing.Point(414, 415);
+            this.btnGravar.Location = new System.Drawing.Point(146, 414);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(79, 39);
-            this.btnGravar.TabIndex = 96;
+            this.btnGravar.TabIndex = 11;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
-            // btnNovo
+            // btnLimpar
             // 
-            this.btnNovo.Enabled = false;
-            this.btnNovo.Image = global::BeautySys.Properties.Resources.novo;
-            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(94, 415);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(72, 39);
-            this.btnNovo.TabIndex = 73;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.btnLimpar.Image = global::BeautySys.Properties.Resources.limpar;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(385, 414);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 39);
+            this.btnLimpar.TabIndex = 106;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
@@ -397,10 +385,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblRg);
             this.Controls.Add(this.lblCpf);
-            this.Controls.Add(this.btnLocalizar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -432,10 +418,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbMedida;
@@ -450,5 +434,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desc;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtdEst;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
