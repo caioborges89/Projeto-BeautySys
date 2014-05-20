@@ -65,6 +65,7 @@
     <Compile Include="Business\ProdutoBO.cs" />
     <Compile Include="Business\ProfissionalBO.cs" />
     <Compile Include="Business\ServicoBO.cs" />
+    <Compile Include="Business\SituacaoChequeBO.cs" />
     <Compile Include="Business\TipoPagtoBO.cs" />
     <Compile Include="Business\TipoProdutoBO.cs" />
     <Compile Include="Business\TipoServicoBO.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Classes\ProdutoVO.cs" />
     <Compile Include="Classes\ProfissionalVO.cs" />
     <Compile Include="Classes\ServicoVO.cs" />
+    <Compile Include="Classes\SituacaoChequeVO.cs" />
     <Compile Include="Classes\TipoPagtoVO.cs" />
     <Compile Include="Classes\TipoProdutoVO.cs" />
     <Compile Include="Classes\TipoServicoVO.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="DataAccess\ProdutoDA.cs" />
     <Compile Include="DataAccess\ProfissionalDA.cs" />
     <Compile Include="DataAccess\ServicoDA.cs" />
+    <Compile Include="DataAccess\SituacaoChequeDA.cs" />
     <Compile Include="DataAccess\TipoPagtoDA.cs" />
     <Compile Include="DataAccess\TipoProdutoDA.cs" />
     <Compile Include="DataAccess\TipoServicoDA.cs" />

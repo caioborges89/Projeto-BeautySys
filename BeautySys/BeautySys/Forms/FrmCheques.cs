@@ -16,13 +16,21 @@ namespace BeautySys.Forms
 {
     public partial class FrmCheques : Form
     {
+        private Int64 codCli = 0;
+
         List<ChequeVO> lista = new List<ChequeVO>();
         ChequeBO _chequeBO = new ChequeBO();
         ChequeVO _chequeVO = new ChequeVO();
+        ClienteDA _clienteDA = new ClienteDA();
+
+        List<SituacaoChequeVO> listaSituacao = new List<SituacaoChequeVO>();
+        SituacaoChequeBO _situacaoChequeBO = new SituacaoChequeBO();
+        SituacaoChequeVO _situacaoChequeVO = new SituacaoChequeVO();
 
         public FrmCheques()
         {
             InitializeComponent();
+            atualizarDtgrid();
         }
 
 #region "Métodos"
@@ -39,12 +47,12 @@ namespace BeautySys.Forms
             GC.Collect();
         }
 
-        private void preencherDtgrid()
+        private void atualizarDtgrid()
         {
             limparObjetos();
 
             lista = _chequeBO.buscarCheque(new ChequeVO());
-
+            
             dgvCheques.Rows.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
@@ -62,7 +70,8 @@ namespace BeautySys.Forms
             _chequeVO.dt_vencimento = Convert.ToDateTime(mtxbDtVencimento.Text);
             _chequeVO.nro = Convert.ToInt32(txbNumero.Text);
             _chequeVO.banco = txbBanco.Text.ToString();
-            _chequeVO.situacao = (cboSituação.SelectedItem as ChequeVO).situacao;
+            _chequeVO.fk_cliente = Convert.ToInt32(codCli);
+            _chequeVO.situacao = Convert.ToInt32((cboSituação.SelectedItem as SituacaoChequeVO).pk_codigo);
             _chequeVO.valor = Convert.ToDecimal(txbValor.Text);          
 
             return _chequeVO;
@@ -70,13 +79,77 @@ namespace BeautySys.Forms
 
         private void preencheCboSituacao()
         {
-            ChequeBO _chequeBO = new ChequeBO();
-            var list = _chequeBO.buscarCheque(new ChequeVO());
-            list.Insert(0, new ChequeVO());
+            SituacaoChequeBO _situacaoChequeBO = new SituacaoChequeBO();
+            var list = _situacaoChequeBO.buscarSituacaoCheque(new SituacaoChequeVO());
+            list.Insert(0, new SituacaoChequeVO());
             cboSituação.DataSource = list;
-            cboSituação.DisplayMember = "SITUACAO";
-            cboSituação.ValueMember = "SITUACAO";
+            cboSituação.DisplayMember = "DESCRICAO";
+            cboSituação.ValueMember = "PK_CODIGO";
         }
+
+        private bool validarCamposPesquisa()
+        {
+            if (mtxbEmisIni.Text.ToString().Length > 6 || mtxbEmisFin.Text.ToString().Length > 6)
+            {
+                if ((mtxbEmisIni.Text.ToString().Length < 10 && mtxbEmisIni.Text.ToString().Length >= 6) || (mtxbEmisFin.Text.ToString().Length < 10 && mtxbEmisFin.Text.ToString().Length >= 6))
+                {
+                    MessageBox.Show("Preenche o inicio e o final da data de emissão!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+            if (mtxbVencIni.Text.ToString().Length > 6 || mtxbVencFin.Text.ToString().Length > 6)
+            {
+                if ((mtxbVencIni.Text.ToString().Length < 10 && mtxbVencIni.Text.ToString().Length >= 6) || (mtxbVencFin.Text.ToString().Length < 10 && mtxbVencFin.Text.ToString().Length >= 6))
+                {
+                    MessageBox.Show("Preenche o inicio e o final da data de vencimento!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        internal ChequeVO preencherObjetoPesquisa()
+        {
+            if (rbaberto.Checked)
+                _chequeVO.criterio = rbaberto.Text;
+
+            if (rbbaixado.Checked)
+                _chequeVO.criterio = rbbaixado.Text;
+
+            if (rbtodos.Checked)
+                _chequeVO.criterio = rbtodos.Text;
+
+            if (rbdevolvido.Checked)
+                _chequeVO.criterio = rbdevolvido.Text; 
+
+            //if (!String.IsNullOrEmpty(mtxbEmisIni.Text) && !String.IsNullOrEmpty(mtxbEmisFin.Text))
+            if (mtxbEmisIni.Text.ToString().Length >= 10 && mtxbEmisFin.Text.ToString().Length >= 10)
+            {
+                _chequeVO.dt_emissao_ini = Convert.ToDateTime(mtxbEmisIni.Text);
+                _chequeVO.dt_emissao_fim = Convert.ToDateTime(mtxbEmisFin.Text);
+            }
+            else
+            {
+                _chequeVO.dt_emissao_ini = Convert.ToDateTime(null);
+                _chequeVO.dt_emissao_fim = Convert.ToDateTime(null);
+            }
+
+            if (mtxbVencIni.Text.ToString().Length >= 10 && mtxbVencFin.Text.ToString().Length >= 10)
+            {
+                _chequeVO.dt_vencimento_ini = Convert.ToDateTime(mtxbVencIni.Text);
+                _chequeVO.dt_vencimento_fim = Convert.ToDateTime(mtxbVencFin.Text);
+            }
+            else
+            {
+                _chequeVO.dt_vencimento_ini = Convert.ToDateTime(null);
+                _chequeVO.dt_vencimento_fim = Convert.ToDateTime(null);
+            }
+            return _chequeVO;
+        }
+
 #endregion
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -93,8 +166,8 @@ namespace BeautySys.Forms
 
         private void FrmCheques_Load(object sender, EventArgs e)
         {
-            preencherDtgrid();
             preencheCboSituacao();
+            atualizarDtgrid();
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -105,25 +178,17 @@ namespace BeautySys.Forms
             }
             else
             {
-                //_chequeVO.fk_cliente = txtNome.Text;
                 lista = _chequeBO.buscarCheque(_chequeVO);
 
-                if (lista.Count == 0)
-                {
                     if (_chequeBO.gravarCheque(preencherObjeto()))
                     {
-                        MessageBox.Show("Serviço cadastrado com sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cheque cadastrado com sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limparObjetos();
 
                         FrmCheques_Load(null, null);
-                        //habilitaComponentes(false);
+                        atualizarDtgrid();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Serviço Inválido! Descrição ja cadastrada!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
         }
 
@@ -166,6 +231,7 @@ namespace BeautySys.Forms
         private void dgvCheques_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             _chequeVO.pk_codigo = Convert.ToInt32(dgvCheques.Rows[dgvCheques.CurrentRow.Index].Cells[0].Value);
+            _chequeVO.nro = Convert.ToInt32(dgvCheques.Rows[dgvCheques.CurrentRow.Index].Cells[0].Value);
             lista = _chequeBO.buscarCheque(_chequeVO);
             if (lista.Count > 0)
             {
@@ -177,6 +243,59 @@ namespace BeautySys.Forms
                 cboSituação.SelectedValue = lista[0].situacao;
                 txbCliente.Text = lista[0].cliente.ToString();
                 txbValor.Text = lista[0].valor.ToString();
+                codCli = Convert.ToInt32(lista[0].fk_cliente);
+            }
+        }
+
+        private void btnLocalizar_Click(object sender, EventArgs e)
+        {
+            if (validarCamposPesquisa())
+            {
+                preencherObjetoPesquisa();
+
+                string dt_emissao = "";
+                limparObjetos();
+
+                lista = _chequeBO.buscarCheque(_chequeVO);
+
+                dgvCheques.Rows.Clear();
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (!lista[i].dt_emissao.ToString("dd/MM/yyyy").Equals("01/01/0001"))
+                    {
+                        dt_emissao = lista[i].dt_emissao.ToString("dd/MM/yyyy");
+                    }
+                    else
+                    {
+                        dt_emissao = "";
+                    }
+                    dgvCheques.Rows.Add(lista[i].pk_codigo, lista[i].nro, lista[i].banco, lista[i].valor);
+                }
+            }
+        }
+
+        private void txbCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(txbCliente.Text))
+                {
+                    PesquisaVO.nome = txbCliente.Text;
+                    PesquisaVO.codigo = 0;
+                    FrmPesquisaCliente frmPesquisaCliente = new FrmPesquisaCliente();
+                    frmPesquisaCliente.ShowDialog();
+
+                    if (PesquisaVO.codigo > 0 && !String.IsNullOrEmpty(PesquisaVO.nome))
+                    {
+                        txbCliente.Text = PesquisaVO.nome;
+                        codCli = PesquisaVO.codigo;
+                    }
+                    else
+                    {
+                        txbCliente.Text = "";
+                        codCli = 0;
+                    }
+                }
             }
         }
     }

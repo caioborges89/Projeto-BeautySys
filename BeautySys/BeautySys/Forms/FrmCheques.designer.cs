@@ -66,6 +66,10 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).BeginInit();
             this.SuspendLayout();
@@ -161,6 +165,7 @@
             this.txbCliente.Name = "txbCliente";
             this.txbCliente.Size = new System.Drawing.Size(253, 20);
             this.txbCliente.TabIndex = 110;
+            this.txbCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbCliente_KeyDown);
             // 
             // txbValor
             // 
@@ -330,6 +335,7 @@
             this.btnLocalizar.Text = "Localizar";
             this.btnLocalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // rbtodos
             // 
@@ -380,6 +386,11 @@
             this.dgvCheques.AllowUserToAddRows = false;
             this.dgvCheques.AllowUserToDeleteRows = false;
             this.dgvCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCheques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.nro,
+            this.banco,
+            this.valor});
             this.dgvCheques.Location = new System.Drawing.Point(14, 90);
             this.dgvCheques.Name = "dgvCheques";
             this.dgvCheques.ReadOnly = true;
@@ -451,6 +462,30 @@
             this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nro
+            // 
+            this.nro.HeaderText = "Nro Cheque";
+            this.nro.Name = "nro";
+            this.nro.ReadOnly = true;
+            // 
+            // banco
+            // 
+            this.banco.HeaderText = "Banco";
+            this.banco.Name = "banco";
+            this.banco.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
             // 
             // FrmCheques
             // 
@@ -534,5 +569,9 @@
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }

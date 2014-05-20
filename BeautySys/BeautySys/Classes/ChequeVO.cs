@@ -24,5 +24,15 @@ namespace BeautySys.Classes
         public decimal valor { get; set; }
 
         public int situacao { get; set; }
+
+        public string criterio { get; set; }
+
+        public DateTime dt_emissao_ini { get; set; }
+
+        public DateTime dt_emissao_fim { get; set; }
+
+        public DateTime dt_vencimento_ini { get; set; }
+
+        public DateTime dt_vencimento_fim { get; set; }
     }
 }
